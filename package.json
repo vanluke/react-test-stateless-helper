@@ -1,9 +1,11 @@
 {
   "name": "react-mocha-stateless-test-helper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Helper for stateless components.",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "compile": "node_modules/.bin/babel --optional runtime -d lib/ src/",
+    "prepublish": "npm run compile",
     "build": "node_modules/.bin/webpack -d -p --progress --hot",
     "test": "node ./node_modules/mocha/bin/mocha --compilers js:babel-core/register --require ./test/helper.js  --recursive"
   },
